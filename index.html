@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div id="backdrop"></div>
+    <header>
+        <h1>
+            Demon Slayer Showdown: Master the Board
+        </h1>
+    </header>
+
+
+    <section id="player-info">
+        <ul>
+            <li id="player2-info">
+                <div class="profile-pic" style="background-image: url('images/nezuko.jpg')"></div>
+                <h2>Rival</h2>
+                <h1 id="player2">Player 2</h1>
+                <span id="value2">O</span>
+            </li>
+            <li id="player1-info">
+                <div class="profile-pic" style="background-image: url('images/tanjiro.jpg')"></div>
+                <h2>You</h2>
+                <h1 id="player1">Player</h1>
+                <span id="value1">X</span>
+            </li>
+        </ul>
+    </section>
+
+    <div id="winner-overlay">
+        <button class="closeButton">&times;</button>
+        <img src="images/winner.png">
+        <div id="winner-display"><h1>You won, </h1><span id="winner-name"></span></div>
+    </div>
+
+    <div id="losor-overlay">
+        <button class="closeButton">&times;</button>
+        <img src="images/losor.png">
+        <div id="losor-display"><h1 id='status'></h1><span id="losor-name"></span></div>
+    </div>
+
+
+    <section id="game">
+        <p>It's‎ <span id="whose-turn"></span>‎ turn!</p>
+        <ol id="blocks">
+            <li id="block-0"></li>
+            <li id="block-1"></li>
+            <li id="block-2"></li>
+            <li id="block-3"></li>
+            <li id="block-4"></li>
+            <li id="block-5"></li>
+            <li id="block-6"></li>
+            <li id="block-7"></li>
+            <li id="block-8"></li>
+        </ol>
+        
+    </section>
+
+
+
+    <section id="nav-btns">
+        <li>
+            <h1 id="player-name"></h1>
+        </li>
+        <li>
+            <button id="edit-name-btn">Enter Name</button>
+        </li>
+        <li>
+            <p>Invite Friend to Play:</p>
+            <button id="invite-friend-btn">Generate Code</button>
+        </li>
+        <li>
+            <p>Join a Game:</p>
+            <button id="join-game-btn">Enter Code</button>
+        </li>
+        <li>
+            <p>Play With Anonymous:</p>
+            <button id="anonymous-btn">Search Player</button>
+        </li>
+    </section>
+
+    <section id="edit-name-section">
+        <h1>Choose your name!</h1>
+        <form>
+        <label for="input-player-name">Player name</label>
+        <input type="text" name="input-player-name" id="input-player-name">
+        <div>
+            <button id="cancel-button" type="button">Cancel</button>
+            <button id="confirm-button" type="button">Confirm</button>
+        </div>
+    </form>
+    </aside>
+    </section>
+
+    <section id="invite-friend-section">
+        <button class="closeButton">&times;</button>
+        <h1>Your Generated Code!</h1>
+        <span id="generated-code"></span> 
+        <button id="copy-code-button" type="button">Copy Code</button>
+    </section>
+
+    <section id="join-game-section">
+        <button class="closeButton">&times;</button>
+        <h1>Enter code!</h1>
+        <input type="text" id="input-code">
+        <button id="validate-code-btn">Verify Code</button>
+    </section>
+</body>
+</html>

@@ -1,0 +1,457 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'lexend deca', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: url(/images/hero.jpg);
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+header {
+    background-color:rgba(202, 63, 142, 0.95);
+    padding: 20px;
+    margin-bottom: 80px;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* ----------------------- Game Section ------------------------*/
+
+/* Styling player info */
+
+#player-info {
+    display: none;
+}
+
+#player-info ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.profile-pic {
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%; 
+    margin: 0 auto; 
+    border: 2px bold black;
+    position: absolute; 
+    top: -25px; 
+    left: calc(50% - 35px); 
+    border: 0.2px solid rgb(255, 255, 255);
+}
+
+
+#player-info li {
+    background-color:rgba(47, 46, 46, 0.95);
+    margin: 15px;
+    padding: 15px;
+    width: 240px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    position: relative; 
+}
+
+#player-info li h2 {
+    font-size: 11px;
+    margin-top: 37px;
+    color: rgb(202, 63, 142);
+}
+
+#player-info li h1{
+    font-size: 14px;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+
+#player-info li span{
+    font-size: 24px;
+    color: rgb(202, 63, 142);
+    font-weight: 600;
+}
+
+#player-info li button{
+    font-size: 13px;
+    color: rgb(232, 232, 232);
+    margin: 0 auto;
+    background-color: rgba(202, 63, 142, 0);
+    margin-top: 7px;
+    padding: 6px 12px; 
+    display: block;    
+    border: 0px;
+    border-radius: 3px;
+    font-family: inherit;
+}
+
+#player-info li button:hover {
+    color: rgb(186, 50, 127);
+}
+
+#player-info div {
+    display: flex;
+    justify-content:center;
+}
+
+/* end */
+
+/* styling game section */
+
+#game {
+    display: none;       
+}
+
+#game p {
+    color:rgb(147, 46, 103);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#game span {
+    font-weight: 900;
+    text-shadow: 0 0 2px rgba(147, 46, 103, 0.5);
+}
+
+#blocks {
+    list-style: none;
+    margin: auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 80px 80px 80px;
+    grid-template-rows: 80px 80px 80px;
+    justify-content: center;
+    gap: 3px;
+}
+
+#blocks li {
+    width: 80px;
+    height: 80px;
+    margin: 6px 3px;
+    background-color: rgba(50, 49, 49, 0.8);
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    color: rgb(202, 63, 142);
+    font-size: 42px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#blocks li:hover {
+    width: 80px;
+    height: 80px;
+    margin: 6px 3px;
+    background-color: rgb(50, 49, 49);
+}
+
+#blocks li.disabled {
+    background-color: rgb(50, 49, 49);
+    cursor: default;
+}
+
+/* end */
+
+/* styling winner overlay */ 
+
+#winner-overlay, #losor-overlay {
+    display: none;              
+    position: relative; 
+    background-color: rgb(50, 49, 49);
+    width: 330px;
+    height: auto;
+    margin: auto;
+    border-radius: 5px;
+    position: fixed; 
+    top: 40%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    z-index: 10000; 
+}
+
+.closeButton{  /* Position close button in top right corner */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+#winner-overlay img {
+    height: 220px;
+    width: auto;
+}
+
+#winner-display{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+#winner-overlay h1, #losor-overlay h1 {
+    margin: 0;
+    font-size: 20px;
+    color: rgb(202, 63, 142);
+}
+
+#winner-overlay span, #losor-overlay span {
+    text-shadow: 0 0 2px rgb(255, 255, 255);
+    color: white;
+    font-size: 22px;
+}
+
+#losor-overlay {
+    text-align: center;
+    height: 230px;
+    width: auto;
+}
+
+#losor-overlay img {
+    height: auto;
+    width: 310px;
+}
+
+#losor-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+
+/* end */
+
+/* ----------------------- home section ---------------------*/
+
+/* Styling navigation buttons */
+
+#nav-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(47, 46, 46, 0.95);
+    width: 400px;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    position: relative; 
+    padding: 15px;
+}
+
+#nav-btns li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#nav-btns p {
+    font-size: 14px;
+    color: rgb(239, 239, 239);
+}
+
+#player-name {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+#edit-name-btn{
+    font-size: 13px;
+    color: rgba(202, 63, 142, 0.95);
+    margin: 0 auto;
+    background-color: rgba(202, 63, 142, 0);
+    margin-bottom: 7px;
+    padding: 6px 12px; 
+    display: block;    
+    border: 0px;
+    border-radius: 3px;
+    font-family: inherit;
+}
+
+#edit-name-btn:hover {
+    color: rgba(186, 50, 127, 0.95);
+}
+
+#invite-friend-btn, #join-game-btn, #anonymous-btn {
+    width: 130px;
+    padding: 8px 15px;
+    margin: 10px;
+    background-color:rgba(202, 63, 142, 0.95);
+    border: 0px;
+    border-radius: 3px;
+    font-family: inherit;
+    color: white;
+}
+
+#invite-friend-btn:hover, #join-game-btn:hover, #anonymous-btn:hover {
+    background-color:rgba(186, 50, 127, 0.95);
+}
+
+/* end */
+
+
+/* styling edit name section */
+
+#edit-name-section {
+    display: none;                    
+    background-color: rgb(50, 49, 49);
+    width: 400px;
+    padding: 15px 0 18px 0px;
+    text-align: center;
+    margin: auto;
+    border-radius: 5px;
+    position: fixed; /* Position the aside element relative to the viewport */
+    top: 45%; /* Center the aside vertically */
+    left: 50%; /* Center the aside horizontally */
+    transform: translate(-50%, -50%); /* Center the aside both vertically and horizontally */
+    z-index: 10000; /* Ensure it's on top of other content */
+}
+
+#edit-name-section h1 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+#edit-name-section label {
+    display: block;
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#edit-name-section input {
+    outline: none;
+    border: none;
+    border-bottom: 0.1px solid rgb(239, 153, 201); 
+    width: 200px;
+    padding: 2px 5px;
+    font-family: inherit;
+    background-color: rgb(50, 49, 49);
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    font-size: 14px;
+}
+
+#cancel-button {
+    padding: 6px 10px;
+    margin: 18px auto;
+    background-color:rgba(202, 63, 142, 0);
+    border: 0px;
+    border-radius: 3px;
+    font-family: inherit;
+    color: rgb(202, 63, 142);
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+#cancel-button:hover {
+    color: rgb(186, 50, 127);
+}
+
+#confirm-button {
+    padding: 6px 10px;
+    margin: 18px auto;
+    background-color:rgba(202, 63, 142, 0.95);
+    border: 0px;
+    border-radius: 3px;
+    font-family: inherit;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+#confirm-button:hover {
+    background-color:rgba(186, 50, 127, 0.95);
+}
+
+/* end */
+
+/* styling invite and join section overlay*/
+
+#invite-friend-section, #join-game-section {
+    background-color: rgb(50, 49, 49);
+    width: 400px;
+    padding: 15px 0 18px 0px;
+    text-align: center;
+    margin: auto;
+    border-radius: 5px;
+    position: fixed; 
+    top: 45%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 10000; 
+    display: none;
+}
+
+#invite-friend-section h1, #join-game-section h1 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 13px;
+}
+
+
+#invite-friend-section span, #input-code {
+    outline: none;
+    border: none;
+    border-bottom: 0.1px solid rgb(239, 153, 201); 
+    width: 200px;
+    padding: 2px 5px;
+    font-family: inherit;
+    background-color: rgb(50, 49, 49);
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    font-size: 14px;
+    margin: auto;
+    display: block;
+}
+
+#validate-code-btn, #copy-code-button {
+    padding: 6px 10px;
+    margin: 15px auto;
+    background-color:rgba(202, 63, 142, 0.95);
+    border: 0px;
+    border-radius: 3px;
+    font-family: inherit;
+    color: white;
+    margin-bottom: 0;
+}
+
+#validate-code-btn:hover, #copy-code-button:hover {
+    background-color:rgba(186, 50, 127, 0.95);
+}
+
+/* end */
+
+/* Backdrop */
+
+#backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(185, 143, 176, 0.8);/* Semi-transparent black background */ 
+    z-index: 9999; /* Ensure it's on top of other content */
+    display: none; 
+}
+
+/* end */
