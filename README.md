@@ -1,0 +1,2 @@
+- Developed an online multiplayer game enabling real-time gameplay over the internet using socket.io for WebSockets.
+- Implemented the front-end with HTML, CSS, and JavaScript. Created a backend server in Node.js with Express.js to manage game sessions and real-time communication
